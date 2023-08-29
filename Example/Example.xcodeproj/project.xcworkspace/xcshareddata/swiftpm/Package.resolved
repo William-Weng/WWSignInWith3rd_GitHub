@@ -1,12 +1,39 @@
 {
   "pins" : [
     {
+      "identity" : "wwnetworking",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWNetworking",
+      "state" : {
+        "revision" : "ae2c095a586156dc8af250f720a51d9ccdb4f177",
+        "version" : "1.1.4"
+      }
+    },
+    {
       "identity" : "wwprint",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWPrint",
       "state" : {
         "revision" : "6b70fabaa1dbeac95b224384819e231a1220900a",
         "version" : "1.2.0"
+      }
+    },
+    {
+      "identity" : "wwsigninwith3rd_apple",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWSignInWith3rd_Apple",
+      "state" : {
+        "revision" : "7841d0389571f6f3b02610b02411115c3328f865",
+        "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "wwsigninwith3rd_github",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWSignInWith3rd_GitHub",
+      "state" : {
+        "branch" : "main",
+        "revision" : "c5d623f78feb3cd49f2293fc7c4b49479edca07e"
       }
     }
   ],

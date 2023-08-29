@@ -15,6 +15,7 @@
 		3DBCD88026F198F300522E3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBCD87E26F198F300522E3B /* LaunchScreen.storyboard */; };
 		8130039027D5D18100436128 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8130038F27D5D18100436128 /* Constant.swift */; };
 		8130039227D5D19000436128 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8130039127D5D19000436128 /* Extension.swift */; };
+		81C0BA122A9D9E2E00B85CDA /* WWSignInWith3rd+GitHub in Frameworks */ = {isa = PBXBuildFile; productRef = 81C0BA112A9D9E2E00B85CDA /* WWSignInWith3rd+GitHub */; };
 		81CA01802A9C93B8008408AC /* WWSignInWith3rd+GitHub in Frameworks */ = {isa = PBXBuildFile; productRef = 81CA017F2A9C93B8008408AC /* WWSignInWith3rd+GitHub */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DAC9C1927016E78006663C2 /* WWPrint in Frameworks */,
+				81C0BA122A9D9E2E00B85CDA /* WWSignInWith3rd+GitHub in Frameworks */,
 				81CA01802A9C93B8008408AC /* WWSignInWith3rd+GitHub in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +143,7 @@
 			packageProductDependencies = (
 				3DAC9C1827016E78006663C2 /* WWPrint */,
 				81CA017F2A9C93B8008408AC /* WWSignInWith3rd+GitHub */,
+				81C0BA112A9D9E2E00B85CDA /* WWSignInWith3rd+GitHub */,
 			);
 			productName = Example;
 			productReference = 3DBCD87026F198EF00522E3B /* Example.app */;
@@ -171,6 +174,7 @@
 			mainGroup = 3DBCD86726F198EF00522E3B;
 			packageReferences = (
 				3DAC9C1727016E78006663C2 /* XCRemoteSwiftPackageReference "WWPrint" */,
+				81C0BA102A9D9E2E00B85CDA /* XCRemoteSwiftPackageReference "WWSignInWith3rd_GitHub" */,
 			);
 			productRefGroup = 3DBCD87126F198EF00522E3B /* Products */;
 			projectDirPath = "";
@@ -422,6 +426,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		81C0BA102A9D9E2E00B85CDA /* XCRemoteSwiftPackageReference "WWSignInWith3rd_GitHub" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/William-Weng/WWSignInWith3rd_GitHub";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -429,6 +441,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3DAC9C1727016E78006663C2 /* XCRemoteSwiftPackageReference "WWPrint" */;
 			productName = WWPrint;
+		};
+		81C0BA112A9D9E2E00B85CDA /* WWSignInWith3rd+GitHub */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81C0BA102A9D9E2E00B85CDA /* XCRemoteSwiftPackageReference "WWSignInWith3rd_GitHub" */;
+			productName = "WWSignInWith3rd+GitHub";
 		};
 		81CA017F2A9C93B8008408AC /* WWSignInWith3rd+GitHub */ = {
 			isa = XCSwiftPackageProductDependency;

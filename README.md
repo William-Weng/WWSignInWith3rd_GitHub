@@ -1,10 +1,10 @@
 # WWSignInWith3rd+GitHub
 
-[![Swift-5.7](https://img.shields.io/badge/Swift-5.7-orange.svg?style=flat)](https://developer.apple.com/swift/) [![iOS-14.0](https://img.shields.io/badge/iOS-14.0-pink.svg?style=flat)](https://developer.apple.com/swift/) [![Swift Package Manager-SUCCESS](https://img.shields.io/badge/Swift_Package_Manager-SUCCESS-blue.svg?style=flat)](https://developer.apple.com/swift/) [![LICENSE](https://img.shields.io/badge/LICENSE-MIT-yellow.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift-5.6](https://img.shields.io/badge/Swift-5.6-orange.svg?style=flat)](https://developer.apple.com/swift/) [![iOS-14.0](https://img.shields.io/badge/iOS-14.0-pink.svg?style=flat)](https://developer.apple.com/swift/) [![Swift Package Manager-SUCCESS](https://img.shields.io/badge/Swift_Package_Manager-SUCCESS-blue.svg?style=flat)](https://developer.apple.com/swift/) [![LICENSE](https://img.shields.io/badge/LICENSE-MIT-yellow.svg?style=flat)](https://developer.apple.com/swift/)
 
-[Use GitHub third-party login.](https://docs.github.com/en/apps/oauth-apps/maintaining-oauth-apps/modifying-an-oauth-app)
-
-[使用GitHub的第三方登入。](https://github.com/settings/developers)
+### [Introduction - 簡介](https://swiftpackageindex.com/William-Weng)
+- [Use GitHub third-party login.](https://docs.github.com/en/apps/oauth-apps/maintaining-oauth-apps/modifying-an-oauth-app)
+- [使用GitHub的第三方登入。](https://github.com/settings/developers)
 
 ![](./Example.gif)
 
@@ -14,6 +14,13 @@ dependencies: [
     .package(url: "https://github.com/William-Weng/WWSignInWith3rd_GitHub.git", .upToNextMajor(from: "1.0.0"))
 ]
 ```
+
+### Function - 可用函式
+|函式|功能|
+|-|-|
+|configure(clientId:secret:callbackURL:scope:)|參數設定|
+|loginWithWeb(presenting:completion:)|登入 - 網頁|
+|logoutWithWeb(contains:completion:)|登出 - 清除GitHub偷偷存在WebView裡面的Cookie值 => 記錄登入的值|
 
 ### Example
 ```swift

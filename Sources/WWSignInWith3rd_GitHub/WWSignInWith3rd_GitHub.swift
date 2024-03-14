@@ -34,7 +34,7 @@ extension WWSignInWith3rd {
     }
 }
 
-// MARK: - WWSignInWith3rd.GitHub
+// MARK: - @objc
 extension WWSignInWith3rd.GitHub {
     
     /// [按下取消按鍵的動作](https://www.jianshu.com/p/0adaa6ddd260)
@@ -65,8 +65,8 @@ extension WWSignInWith3rd.GitHub: UIAdaptivePresentationControllerDelegate {
     }
 }
 
-// MARK: - WWSignInWith3rd.GitHub (public class function)
-extension WWSignInWith3rd.GitHub {
+// MARK: - WWSignInWith3rd.GitHub (public function)
+public extension WWSignInWith3rd.GitHub {
     
     /// [參數設定](https://www.jianshu.com/p/78d186aeb526)
     /// - Parameters:
@@ -74,7 +74,7 @@ extension WWSignInWith3rd.GitHub {
     ///   - secret: [String](https://www.open-open.com/lib/view/open1440845454263.html)
     ///   - callbackURL: [String](https://www.ruanyifeng.com/blog/2019/04/github-oauth.html)
     ///   - scope: String
-    public func configure(clientId: String, secret: String, callbackURL: String, scope: String = "user:email") {
+    func configure(clientId: String, secret: String, callbackURL: String, scope: String = "user:email") {
         
         self.clientId = clientId
         self.secret = secret
@@ -86,7 +86,7 @@ extension WWSignInWith3rd.GitHub {
     /// - Parameters:
     ///   - viewController: [UIViewController](https://www.ruanyifeng.com/blog/2019/04/github-oauth.html)
     ///   - completion: Result<Data?, Error>
-    public func loginWithWeb(presenting viewController: UIViewController, completion: ((Result<Data?, Error>) -> Void)?) {
+    func loginWithWeb(presenting viewController: UIViewController, completion: ((Result<Data?, Error>) -> Void)?) {
         
         guard let clientId = clientId,
               let scope = scope,
@@ -107,7 +107,7 @@ extension WWSignInWith3rd.GitHub {
     /// - Parameters:
     ///   - key: [Cookie的Key值 => WKWebsiteDataRecord.displayName = github.com]
     ///   - completion: (Bool)
-    public func logoutWithWeb(contains key: String = "github.com", completion: ((Bool) -> Void)?) {
+    func logoutWithWeb(contains key: String = "github.com", completion: ((Bool) -> Void)?) {
         
         WKWebsiteDataStore.default()._cleanWebsiteData(contains: key) { isSuccess in
             completion?(isSuccess)
@@ -115,15 +115,15 @@ extension WWSignInWith3rd.GitHub {
     }
 }
 
-// MARK: - WWSignInWith3rd.GitHub (public class function)
-extension WWSignInWith3rd.GitHub {
+// MARK: - WWSignInWith3rd.GitHub (private function)
+private extension WWSignInWith3rd.GitHub {
     
     /// 產生要登入的ViewController
     /// - Parameters:
     ///   - urlString: String
     ///   - title: String
     /// - Returns: UINavigationController
-    private func signInNavigationController(with urlString: String, title: String = "GitHub第三方登入") -> UINavigationController {
+    func signInNavigationController(with urlString: String, title: String = "GitHub第三方登入") -> UINavigationController {
         
         let rootViewController = UIViewController()
         let webView = WKWebView._build(delegate: self, frame: .zero, configuration: WKWebViewConfiguration(), contentInsetAdjustmentBehavior: .automatic)
@@ -142,7 +142,7 @@ extension WWSignInWith3rd.GitHub {
     /// - Parameters:
     ///   - webView: WKWebView
     ///   - navigationResponse: WKNavigationResponse
-    private func signInAction(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse) {
+    func signInAction(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse) {
         
         guard let url = navigationResponse.response.url,
               let callbackURL = callbackURL,
@@ -183,7 +183,7 @@ extension WWSignInWith3rd.GitHub {
     /// 解析回傳回來的資訊 => 取得access_token
     /// - Parameter info: Constant.ResponseInformation
     /// - Returns: String
-    private func gitHubAccessToken(with info: ResponseInformation) -> String? {
+    func gitHubAccessToken(with info: ResponseInformation) -> String? {
         
         guard let queryString = info.data?._string(),
               let _urlString = Optional.some("\(self.GitHubURL.william)?\(queryString)"),

@@ -3,11 +3,9 @@
 //  Example
 //
 //  Created by William.Weng on 2022/12/15.
-//  ~/Library/Caches/org.swift.swiftpm/
-//  file:///Users/william/Desktop/WWCropViewController
+//
 
 import UIKit
-import WWPrint
 import WWSignInWith3rd_Apple
 import WWSignInWith3rd_GitHub
 
@@ -22,7 +20,7 @@ final class ViewController: UIViewController {
     @IBAction func signInWithGithub(_ sender: UIButton) {
         
         WWSignInWith3rd.GitHub.shared.loginWithWeb(presenting: self) { result in
-            wwPrint(result)
+            print(result)
         }
     }
 }

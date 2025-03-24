@@ -157,7 +157,7 @@ private extension WWSignInWith3rd.GitHub {
         
         let paramaters = ["client_id": "\(client_id)", "client_secret": "\(client_secret)", "code": "\(code)"]
         
-        WWNetworking.shared.request(with: .POST, urlString: GitHubURL.accessToken, contentType: .formUrlEncoded, paramaters: paramaters, headers: nil, httpBody: nil) { result in
+        WWNetworking.shared.request(httpMethod: .POST, urlString: GitHubURL.accessToken, contentType: .formUrlEncoded, paramaters: paramaters, headers: nil) { result in
             
             switch result {
             case .failure(let error): self.completionBlock?(.failure(error))
@@ -165,9 +165,9 @@ private extension WWSignInWith3rd.GitHub {
                 
                 guard let accessToken = self.gitHubAccessToken(with: info) else { return }
                 
-                let headers = ["\(WWNetworking.Constant.HTTPHeaderField.authorization)": "\(WWNetworking.Constant.ContentType.bearer(forKey: accessToken))"]
+                let headers = ["\(WWNetworking.HTTPHeaderField.authorization)": "\(WWNetworking.ContentType.bearer(forKey: accessToken))"]
                 
-                WWNetworking.shared.request(with: .GET, urlString: self.GitHubURL.user, contentType: .formUrlEncoded, paramaters: nil, headers: headers, httpBody: nil) { _result in
+                WWNetworking.shared.request(httpMethod: .GET, urlString: self.GitHubURL.user, contentType: .formUrlEncoded, paramaters: nil, headers: headers) { _result in
                     
                     switch _result {
                     case .failure(let error): self.completionBlock?(.failure(error))

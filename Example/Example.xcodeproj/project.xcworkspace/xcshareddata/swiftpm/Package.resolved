@@ -1,21 +1,13 @@
 {
+  "originHash" : "95941a2d8b12bfe69a1992caafdb483a3ad9a83a5f12e1396c9bf3175d3a7445",
   "pins" : [
     {
       "identity" : "wwnetworking",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWNetworking",
       "state" : {
-        "revision" : "ae2c095a586156dc8af250f720a51d9ccdb4f177",
-        "version" : "1.1.4"
-      }
-    },
-    {
-      "identity" : "wwprint",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/William-Weng/WWPrint",
-      "state" : {
-        "revision" : "6b70fabaa1dbeac95b224384819e231a1220900a",
-        "version" : "1.2.0"
+        "revision" : "6c2d905e222b8703e621d483c538135e572e669a",
+        "version" : "1.3.1"
       }
     },
     {
@@ -23,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWSignInWith3rd_Apple",
       "state" : {
-        "revision" : "7841d0389571f6f3b02610b02411115c3328f865",
-        "version" : "1.0.1"
+        "revision" : "287af76bb04e18060c0c524e14e3b99db6dd2a56",
+        "version" : "1.1.0"
       }
     },
     {
@@ -32,10 +24,10 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWSignInWith3rd_GitHub",
       "state" : {
-        "branch" : "main",
-        "revision" : "c5d623f78feb3cd49f2293fc7c4b49479edca07e"
+        "revision" : "6013492889a4fbb1c3ee0565c0e676f20197cb3f",
+        "version" : "1.1.0"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
